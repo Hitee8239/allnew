@@ -1,0 +1,21 @@
+[0;1;32m●[0m mariadb.service - MariaDB 10.5 database server
+     Loaded: loaded (]8;;file://centos/usr/lib/systemd/system/mariadb.service/usr/lib/systemd/system/mariadb.service]8;;; [0;1;32menabled[0m; preset: [0;1;38;5;185mdisabled[0m)
+     Active: [0;1;32mactive (running)[0m since Thu 2023-03-23 16:17:19 KST; 5s ago
+       Docs: ]8;;man:mariadbd(8)man:mariadbd(8)]8;;
+             ]8;;https://mariadb.com/kb/en/library/systemd/https://mariadb.com/kb/en/library/systemd/]8;;
+    Process: 5860 ExecStartPre=/usr/libexec/mariadb-check-socket (code=exited, status=0/SUCCESS)
+    Process: 5882 ExecStartPre=/usr/libexec/mariadb-prepare-db-dir mariadb.service (code=exited, status=0/SUCCESS)
+    Process: 5934 ExecStartPost=/usr/libexec/mariadb-check-upgrade (code=exited, status=0/SUCCESS)
+   Main PID: 5918 (mariadbd)
+     Status: "Taking your SQL requests now..."
+      Tasks: 15 (limit: 10529)
+     Memory: 68.3M
+        CPU: 234ms
+     CGroup: /system.slice/mariadb.service
+             └─[0;38;5;245m5918 /usr/libexec/mariadbd --basedir=/usr[0m
+
+ 3월 23 16:17:18 centos systemd[1]: Starting MariaDB 10.5 database server...
+ 3월 23 16:17:19 centos mariadb-prepare-db-dir[5882]: Database MariaDB is probably initialized in /var/lib/mysql already, nothing is done.
+ 3월 23 16:17:19 centos mariadb-prepare-db-dir[5882]: If this is not the case, make sure the /var/lib/mysql is empty before running mariadb-prepare-db-dir.
+ 3월 23 16:17:19 centos mariadbd[5918]: 2023-03-23 16:17:19 0 [Note] /usr/libexec/mariadbd (mysqld 10.5.16-MariaDB) starting as process 5918 ...
+ 3월 23 16:17:19 centos systemd[1]: Started MariaDB 10.5 database server.
