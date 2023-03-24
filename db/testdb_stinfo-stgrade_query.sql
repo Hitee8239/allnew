@@ -14,5 +14,14 @@ where st_info.ST_ID=202301 and st_grade.ST_ID=202301;
 
 UPDATE st_grade set Linux=90 WHERE ST_ID=202301;
 
-SELECT st_info.NAME, st_grade.Linux, st_grade.DB, st_info.DEPT from st_info , st_grade 
+
+SELECT st_info.NAME, st_grade.Linux, st_grade.DB, st_info.DEPT 
+from st_info , st_grade 
 WHERE  st_info.ST_ID=202301 and st_grade.ST_ID=202301;
+
+UPDATE st_info set DEPT="Computer" WHERE ST_ID=202301;
+
+
+
+
+
