@@ -10,3 +10,6 @@ c/**/test
 # java programing 
 java/*.class
 
+## scala
+scala/**/project
+scala/**/target
