@@ -13,3 +13,10 @@ java/*.class
 ## scala
 scala/**/project
 scala/**/target
+
+## nodejs
+node/**/node_modules
+
+## python
+python/**/.venv
+python/**/__pycache__/

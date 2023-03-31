@@ -5,7 +5,7 @@ app.get('/', function (req, res) {
     res.send("Hello Node js")
 });
 
-app.listen(3000, function () {
-    console.log("3000 port : Server Start~!!")
+app.listen(8000, function () {
+    console.log("8000 port : Server Start~!!")
 });
 
