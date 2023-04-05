@@ -1,14 +1,14 @@
-use test 
-db.place.drop()
+use test
+db.places.drop()
 db.people.drop()
 
 db.places.insert({
     name : "Broadway Center",
-    url  : "bc.example.net"
+    url : "bc.example.net"
 })
 
-db.places.insert({
+db.people.insert({
     name : "Erin",
-    place_id : db.places.findOne({name: "Broadway Center"})._id,
-    url  : "bc.example.net/Erin"
+    places_id : db.places.findOne({name : "Broadway Center"})._id,
+    url : "bc.example.net/Erin"
 })

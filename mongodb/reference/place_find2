@@ -1,2 +1,0 @@
-use test 
-db.places.findOne({_id : db.people.findOne({name:"Erin"}).places_id}).url
