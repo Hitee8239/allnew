@@ -38,3 +38,6 @@ mongodb/backup
 oracle/node/dbConfig.js
 oracle/node/node_modules
 oracle/node/package-lock.json
+
+#vscode
+.vscode
