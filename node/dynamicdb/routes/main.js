@@ -25,7 +25,39 @@ app.get('/hello', (req, res) => {
 app.get('/select', (req, res) => {
     const result = connection.query('select * from user');
     console.log(result);
-    res.send(result);
+    // res.send(result);
+    res.writeHead(200);
+    var template = `
+        <!doctype html>
+        <html>
+        <head>
+            <title>Result</title>
+            <meta charset="utf-8">
+            <link href="/main.css" rel="stylesheet" type="text/css" >
+        </head>
+        <body>
+        <table border="1" style="margin:auto; text-align:center;">
+        <thead>
+            <tr><th>User ID</th><th>Password</th></tr>
+        </thead>
+        <tbody>
+        `;
+    for (var i = 0; i < result.length; i++) {
+        template += `
+        <tr>
+            <td>${result[i]['userid']}</td>
+            <td class='passwd'>${result[i]['passwd']}</td>
+        </tr>
+        `;
+    }
+    template += `
+        </tbody>
+        </table>
+        </body>
+        </html>
+    `;
+    res.end(template);
+
 })
 
 // request O, query X
@@ -40,7 +72,42 @@ app.get('/selectQuery', (req, res) => {
     const id = req.query.id;
     const result = connection.query("select * from user where userid=?", [id]);
     console.log(result);
-    res.send(result);
+    // res.send(result);
+    if (result.length == 0) {
+        res.send('<p class="emp">데이터가 없습니다</p>')
+    } else {
+        res.writeHead(200);
+        var template = `
+        <!doctype html>
+        <html>
+        <head>
+            <title>Result</title>
+            <meta charset="utf-8">
+            <link href="main.css" rel="stylesheet" type="text/css" >
+        </head>
+        <body>
+        <table border="1" style="margin:auto; text-align:center;">
+        <thead>
+            <tr><th>User ID</th><th>Password</th></tr>
+        </thead>
+        <tbody>
+        `;
+        for (var i = 0; i < result.length; i++) {
+            template += `
+        <tr>
+            <td>${result[i]['userid']}</td>
+            <td class="passwd">${result[i]['passwd']}</td>
+        </tr>
+        `;
+        }
+        template += `
+        </tbody>
+        </table>
+        </body>
+        </html>
+    `;
+        res.end(template);
+    }
 })
 
 // request O, query O
