@@ -1,6 +1,7 @@
 body {
   background-color: mistyrose;
   font: bold 19px monospace, sans-serif;
+  margin: 0 auto;
 }
 h3 {
   color: purple;
@@ -84,4 +85,48 @@ div.noround {
   padding: 50px;
 }
 
+#menubar {
+	background :#511f00;
+  
+}
+#menubar ul { /* 여백과 패딩 모두 0 */
+	margin : 0;
+	padding : 0;
+	width :100%; /* 모든 아이템(<li>)을 한 줄에 품을 수 있는 폭 */
+  display: flex;
+}
+#menubar ul li {
+	display : inline-block; 
+	list-style-type : none; 
+	padding : 0px 15px;     
+}
+#menubar ul li:nth-child(1) {
+	flex-grow: 0.1;
+  
+}
+#menubar ul li:nth-child(2) {
+	flex-grow: 2;
+  
+}
+#menubar ul li:nth-child(3) {
+	flex-grow: 0;
+  
+}
 
+
+#menubar ul li a {
+	color : white;
+  	text-decoration : none; /* 링크 보이지 않게 */
+}
+#menubar ul li a:hover {
+ 	color : violet;  /* 마우스 올라 갈 때 색 */
+}
+
+.nav_img{
+  width: 100%;
+  height: 8rem;
+  background-image: url("https://images.adsttc.com/media/images/63d9/358c/0279/5c14/3077/fd2f/slideshow/apartamento-estantes-cota760_18.jpg?1675179430");
+  background-position:100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
