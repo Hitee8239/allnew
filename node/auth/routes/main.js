@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mysql = require('sync-mysql');
-const CircularJSON = require('circular-json')
 const env = require('dotenv').config({ path: "../../.env" });
 
 var connection = new mysql({
@@ -42,9 +41,36 @@ app.post('/login', (req, res) => {
 // register
 app.post('/register', (req, res) => {
     const { id, pw } = req.body;
-    const result = connection.query("insert into user values (?, ?)", [id, pw]);
-    console.log(result);
-    res.redirect('/');
+    if (id == "") {
+        res.redirect('register.html')
+    } else {
+        let result = connection.query("select * from user where userid=?", [id]);
+        if (result.length > 0) {
+            res.writeHead(200);
+            var template = `
+                <!DOCTYPE html>
+                <html>
+                    <head>  
+                        <meta charset="UTF-8">
+                        <title>Error</title>
+                    </head>
+                    <body>
+                        <div>
+                            <h3 style="margin-left: 30px">Register Faild</h3>
+                            <h3 style="margin-left: 30px">이미 존재하는 아이디입니다.</h3>
+                            <a href="register.html" style="margin-left: 30px">다시 시도하기 </a>
+                        </div>
+                    </body>
+                </html>
+            `;
+            res.end(template);
+        }else {
+            result = connection.query("insert into user values (?,?)",
+            [id, pw]);
+            console.log(result);
+            res.redirect('/')
+        }
+    }
 })
 
 // request O, query X
@@ -103,4 +129,3 @@ app.post('/delete', (req, res) => {
 })
 
 module.exports = app;
-
