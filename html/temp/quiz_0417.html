@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>랜덤 배열 생성 후 최대 값 출력 </h3>
+    <hr>
+    <script>
+        // const N = 5;
+        // const arr = new Array(N);
+
+        // let output = '배열: ';
+        // for (let i = 0; i < N; i++) {
+        //     const ran = Math.floor(Math.random() * 101);
+        //     arr[i] = ran;
+        //     output += `${ran}, `;
+        // }
+        // document.write(output);
+
+        // let max = arr[0];
+        // for (let i = 1; i < N; i++) {
+        //     max = arr[i] > max ? arr[i] : max;
+        // }
+        // document.write(`<br>최대값: ${max}`);
+
+        // const N = 5;
+        // let arrr = new Array(N);
+        // let max = 0;
+        // document.write("<br> 배열의 길이 :" + arrr.length+'<br>')
+        // document.write("전체 배열의 값 : ");
+        // for (let i = 0; i < N; i++) {
+        //     arrr[i] = Math.floor(Math.random() * 100 + 1);
+        //     document.writeln(arrr[i]);
+        //     max = arrr[i] > max ? arrr[i] : max;
+        // }
+
+
+        // arrr[i].reverse()
+
+        // document.write("<br>reverse 배열 : ")
+        // for (let i = 0; i < N / 2; i++) {
+        //     let temp = arrr[i];
+        //     arrr[i] = arrr[N - 1 - i];
+        //     arrr[N - 1 - i] = temp;
+        // }
+
+        // for (let i = 0; i < N; i++) {
+        //     document.writeln(arrr[i]);
+        // }
+
+
+        // document.write("<br> 배열 원소 중 최대 값 : " + max)
+
+        // var str = prompt("정수를 입력하세요");
+        // var num = Number(str);
+        // if (num > 10) {
+        //     document.write("제대로 적으세요")
+        // } else  {
+        //     const array = new Array(num);
+        //     document.write(`배열의 길이 :` + num);
+        //     var output = `<br>배열 : `;
+        //     for (let i = 0; i < num; i++) {
+        //         const ran = Math.floor(Math.random() * 10 + 1);
+        //         array[i] = ran;
+        //         output += `${ran}, `;
+        //     }
+        //     document.write(output);
+
+        //     for (i = 0 ; i < number ; i++){
+        //         sum += array[i];
+        //         if( sum < n * 3){
+        //             document.write(`<br>종료된 시점의 인덱스: array[` + i + `] <br> sum = ` + sum);
+        //         };
+        //         break;
+        //         document.write('<br>종료된 시점의 합산 값: ' + sum);
+        //     }
+
+        // }
+
+        // let n = 5;
+        // let array = new Array(n);
+        // let sum = 0;
+        // document.write("배열의 길이 : " + n);
+        // document.write("<br> 배열의 값 : ");
+        // for (let i = 0; i < n; i++) {
+        //     array[i] = Math.floor(Math.random() * 10 + 1);
+        //     document.writeln(array[i]);
+        // }
+        // for (i = 0; i < n; i++) {
+        //     sum += array[i];
+        //     if (sum > n * 3) {
+        //         document.write(
+        //             "<br> 종료 시점의 인덱스 : array[" + i + "] <br> sum = " + sum
+        //         );
+        //         break;
+        //     }
+        // }
+
+
+        var arr = []; 
+        var sum = 0; 
+
+        while (1) {
+            var str = prompt("정수를 입력하세요");
+            var num = Number(str);
+
+            if (num > 10 || num < 1) {
+                document.write("제대로 적으세요<br>");
+                continue;
+            }
+
+            arr.push(num); 
+            if (sum + num > 30) {
+                arr.pop()
+                break; 
+            }
+            sum += num; 
+        }
+
+        document.write("입력된 배열: [" + arr + `] <br>`);
+        document.write("배열의 합: "+sum + "<br>");
+        document.write("배열의 수: " + arr.length);
+        
+
+
+    </script>
+</body>
+
+</html>
