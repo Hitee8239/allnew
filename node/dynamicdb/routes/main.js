@@ -57,7 +57,6 @@ app.get('/select', (req, res) => {
         </html>
     `;
     res.end(template);
-
 })
 
 // request O, query X
