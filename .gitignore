@@ -21,6 +21,8 @@ scala/**/target
 node/**/node_modules
 node/**/package-lock.json
 
+ninebrary/**/node_modules
+
 ## python
 python/**/.venv
 python/**/__pycache__/

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Check Prime Number</title>
+    <script>
+        function check() {
+            const val = document.getElementById("num").value;
+            const prime = new Worker("prime.js");
+            prime.postMessage({ val: val });
+            prime.onmessage = function (e) {
+                if (val == "") {
+                    alert("값을 입력해주세요 ")
+                }
+                if (e.data) {
+                    alert(`${val}은 프라임넘버입니다.`);
+                } else {
+                    alert(`${val}은 프라임넘버가 아닙니다`);
+                }
+            };
+        }
+    </script>
+</head>
+<body>
+    <h2>Check Prime Number</h2>
+    <hr>
+    <div>
+        <form>
+            <input type="text" id="num">
+            <button type="button" onclick="check()">Check</button>
+        </form>
+    </div>
+</body>
+</html>
