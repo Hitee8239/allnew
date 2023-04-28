@@ -30,14 +30,14 @@ app.get('/', (req, res) => {
 // request O, query X
 app.get('/book/selectdata', (req, res) => {
     const result = connection.query('SELECT * FROM BookTbl ;');
-    console.log(result);
+    // console.log(result);
     res.send(result);
 })
 
 // request O, query X
-app.post('/book/selectdata', (req, res) => {
+  app.post('/book/selectdata', (req, res) => {
     const result = connection.query('SELECT * FROM BookTbl ;');
-    console.log(result);
+    // console.log(result);
     res.send(result);
 })
 
@@ -89,9 +89,13 @@ app.get('/book/:bookId', (req, res) => {
 app.get('/search', (req, res) => {
     const keyword = req.query.q;
     const searchResult = connection.query(`SELECT * FROM BookTbl  WHERE BK_NAME LIKE '%${keyword}%' OR BK_Writer LIKE '%${keyword}%'`);
-    console.log(searchResult)
+    // console.log(searchResult)
     res.send(searchResult)
 });
+
+app.get('/main',(req,res)=>{
+    res.redirect('main.html')
+})
 
 // app.post('/brrow/book',(req,res)=>{
 //     const brrow = req.

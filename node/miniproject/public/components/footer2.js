@@ -4,7 +4,7 @@ function createFooter() {
 
     const logo = document.createElement('img');
     logo.id = 'footer_Logo';
-    logo.src = './img/logo.png';
+    logo.src = '../img/logo.png';
     logo.alt = 'Logo';
 
     const linkContainer = document.createElement('div');
@@ -12,11 +12,7 @@ function createFooter() {
 
     const helpLink = document.createElement('a');
     helpLink.href = 'https://github.com/impelfin';
-    helpLink.textContent = '도움주신분  |';
-
-    const sponsored = document.createElement('a');
-    sponsored.href = 'http://www.kibwa.org/'
-    sponsored.textContent = `교육지원`
+    helpLink.textContent = '도움주신분';
 
     const divider = document.createElement('span');
     divider.textContent = ' | ';
@@ -25,8 +21,6 @@ function createFooter() {
     copyRight.textContent = 'ⓒ 2023 NineBrary, Inc. All Rights Reserved.';
 
     linkContainer.appendChild(helpLink);
-    linkContainer.appendChild(divider);
-    linkContainer.appendChild(sponsored)
     linkContainer.appendChild(divider);
     linkContainer.appendChild(copyRight);
 

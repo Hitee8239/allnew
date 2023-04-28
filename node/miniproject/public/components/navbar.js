@@ -60,7 +60,7 @@ function createNavbar() {
     container.appendChild(loginButton);
 
     return container;
-}
+} 
 
 document.addEventListener('DOMContentLoaded', function () {
     const navbar = createNavbar();
