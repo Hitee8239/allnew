@@ -1,0 +1,18 @@
+
+def square_number(nums):
+    for i in nums:
+        yield i*i
+mynum = [1,2,3,4,5]
+
+
+
+square = square_number(mynum)
+for i in range(len(mynum)):
+    print(f"Square value of mynum[{i}] = {mynum[i]} : {next(square)}")
+
+
+
+
+
+
+
