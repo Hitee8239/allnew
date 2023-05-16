@@ -1,6 +1,6 @@
 import cx_Oracle
 
-cx_Oracle.init_oracle_client(lib_dir="/Users/kim-incheol/OracleXE/instantclient_19_8")
+cx_Oracle.init_oracle_client(lib_dir="/usr/local/OracleXE/instantclient_19_19")
 conn = None
 cur = None
 
