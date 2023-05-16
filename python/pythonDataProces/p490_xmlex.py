@@ -1,5 +1,5 @@
 from xml.etree.ElementTree import parse
-tree = parse('xmlEx_03.html')
+tree = parse('xmlEx_03.xml')
 myroot = tree.getroot()
 print(type(myroot))
 print('-'*50)
@@ -16,5 +16,6 @@ for onefamily in families:
             print(onesaram[0].text)
         else:
             print(onesaram.attrib['이름'])
-     print('-'*50)
-print('-'*50)
+     
+    print('-'*50)
+    
