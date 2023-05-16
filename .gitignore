@@ -24,6 +24,7 @@ node/**/package-lock.json
 ninebrary/**/node_modules
 
 ## python
+python/secret.json
 python/**/.venv
 python/**/__pycache__/
 python/**/.idea
