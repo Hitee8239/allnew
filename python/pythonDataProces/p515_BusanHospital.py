@@ -2,7 +2,7 @@ import json, urllib.request, datetime, math
 import os.path
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.relpath("./")))
-secret_file = os.path.join(BASE_DIR, './secret.json')
+secret_file = os.path.join(BASE_DIR, '../secret.json')
 
 with open(secret_file) as f:
     secrets = json.loads(f.read())
@@ -29,7 +29,7 @@ def getHospitalData(pageNo, numOfRows):
 
     parameters = ''
     parameters += "?resultType=json"
-    parameters += "&serviceKey=" + get_secret("busan_h_apiKey")
+    parameters += "&serviceKey=" + get_secret("data_apiKey")
     parameters += "&pageNo=" + str(pageNo) 
     parameters += "&numOfRows=" + str(numOfRows)  
     url = end_point + parameters
@@ -70,9 +70,10 @@ while(True):
     else :
         break
 
-    savedFilename = 'xx_Busan_medical.json'
+    # savedFilename = 'xx_Busan_medical.json'
     with open(savedFilename, 'w', encoding='utf8') as outfile:
         retJson = json.dumps(jsonResult, indent=4, sort_keys=True, ensure_ascii=False)
         outfile.write(retJson)
 
+    
     print(savedFilename + ' file saved..')

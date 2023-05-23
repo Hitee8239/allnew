@@ -50,3 +50,10 @@ oracle/node/package-lock.json
 ## html
 html/mysql/node_modules
 html/mysql/package-lock.json
+
+jbj/*.csv
+jbj/*.json
+python/*.json
+python/*.csv
+python/pythonDataProces/*.json
+python/pythonDataProces/*.csv
