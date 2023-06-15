@@ -29,6 +29,8 @@ python/**/.venv
 python/**/__pycache__/
 python/**/.idea
 python/**/secret.json
+python/secret.json
+**/secret.json
 
 ##mongodb
 mongodb/*.json
